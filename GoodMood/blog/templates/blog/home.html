@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for p in public %}
+{% if p.photo %}
+<p><img src="{{p.photo.url}}" height="200" width="200"></p>
+{% endif %}
+<p>{{p.content|linebreaks|truncatewords:30}} <a href="{{p.get_absolute_url}}">Подробнее</a></p>
+{% endfor %}
+{% endblock content %}

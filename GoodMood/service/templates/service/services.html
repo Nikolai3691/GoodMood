@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for s in servic %}
+<h1>{{s.sub_cat}} </h1>
+<br>Мастер: {{s.worker}}
+<br>Цена: {{s.price}} р
+<br>Время процедуры: {{s.duration}} часа
+{% if s.photo %}
+<p><img src="{{s.photo.url}}" height="200" width="200"></p>
+<a href="records.html">Записаться</a>
+{% endif %}
+<p>{{s.write_up|linebreaks}}</p>
+{% endfor %}
+{% endblock content %}

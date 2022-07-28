@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for r in rec %}
+<h1>{{r.service}}}</h1>
+<form method="post">
+{% csrf_token %}
+<br>{{r.record_closed}} - запись закрыта {{r.person_record}}
+</form>
+{% endfor %}
+{% endblock content %}

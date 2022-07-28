@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for c in comm %}
+<p>{{c.person_comment}}: {{c.title}}</p>
+<br>{{c.content}}
+{% endfor %}
+<br><a href="#">добавить отзыв</a>
+<a href="#">комментировать</a>
+{% endblock content %}
+
+
+
